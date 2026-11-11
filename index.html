@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100e18">
+  <meta name="description" content="Crybanana — анимэ, манга, cosplay болон дижитал бүтээгдэхүүний дэлгүүр.">
+  <title>Crybanana — Дижитал дэлгүүр</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap nav">
+      <a class="logo" href="#" aria-label="Crybanana нүүр">
+        Cry<span>banana</span><i>.</i>
+      </a>
+
+      <nav class="main-nav" aria-label="Үндсэн цэс">
+        <a href="#anime">Анимэ</a>
+        <a href="#manga">Манга</a>
+        <a href="#shop">Дэлгүүр</a>
+        <a href="#help">Тусламж</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button
+          class="theme-switch"
+          id="themeButton"
+          type="button"
+          aria-label="Гэрэлтэй горим руу шилжүүлэх"
+          aria-pressed="false"
+          title="Өнгөний горим солих"
+        >
+          <span class="theme-track" aria-hidden="true">
+            <span class="theme-icon theme-sun">☀</span>
+            <span class="theme-icon theme-moon">☾</span>
+            <span class="theme-knob"></span>
+          </span>
+        </button>
+
+        <button class="cart-button" id="cartButton" type="button" aria-label="Сагс нээх">
+          <span aria-hidden="true">🛒</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">DIGITAL • ANIME • MANGA</span>
+        <h1>Дуртай зүйлсээ<br><span>нэг дороос.</span></h1>
+
+        <p>Анимэ, манга, cosplay болон дуртай дижитал үйлчилгээгээ олоорой.</p>
+        <a class="main-button" href="#anime">Анимэ үзэх <span>↓</span></a>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-orb"></span>
+        <span class="hero-emoji hero-emoji-one">🌸</span>
+        <span class="hero-emoji hero-emoji-two">📚</span>
+        <span class="hero-emoji hero-emoji-three">🎧</span>
+        <span class="hero-star">✦</span>
+      </div>
+    </section>
+
+    <section class="section" id="anime">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ЭХЛЭЭД ЭНДЭЭС</span>
+          <h2>Анимэ ертөнц</h2>
+        </div>
+        <p>Анимэ, манга, cosplay-гаа сонгоорой.</p>
+      </div>
+
+      <div class="category-tiles">
+        <button class="category-tile anime-tile" type="button" data-pick="Анимэ">
+          <span class="tile-icon">🌸</span>
+          <span class="tile-name">Анимэ</span>
+          <span class="tile-description">Фэн багц, үйлчилгээ</span>
+        </button>
+
+        <button class="category-tile manga-tile" type="button" data-pick="Манга" id="manga">
+          <span class="tile-icon">📚</span>
+          <span class="tile-name">Манга</span>
+          <span class="tile-description">Манга subscription, багц</span>
+        </button>
+
+        <button class="category-tile cosplay-tile" type="button" data-pick="Cosplay">
+          <span class="tile-icon">🎭</span>
+          <span class="tile-name">Cosplay</span>
+          <span class="tile-description">Дүрээ сонгож outfit захиалах</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-heading shop-heading">
+        <div>
+          <span class="eyebrow">CRYBANANA STORE</span>
+          <h2>Бүтээгдэхүүн</h2>
+        </div>
+        <p>Хайж, ангилж, үнээр эрэмбэлээрэй.</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Бүтээгдэхүүн хайх..."
+            aria-label="Бүтээгдэхүүн хайх"
+          >
+        </label>
+
+        <select id="categorySelect" aria-label="Ангилал сонгох">
+          <option value="all">Бүх ангилал</option>
+          <option value="Анимэ">Анимэ</option>
+          <option value="Манга">Манга</option>
+          <option value="Cosplay">Cosplay</option>
+          <option value="Апп">Апп</option>
+          <option value="Хөгжим">Хөгжим</option>
+          <option value="Кино">Кино</option>
+        </select>
+
+        <select id="sortSelect" aria-label="Үнээр эрэмбэлэх">
+          <option value="default">Эрэмбэлэх</option>
+          <option value="asc">Үнэ: багаас их</option>
+          <option value="desc">Үнэ: ихээс бага</option>
+        </select>
+      </div>
+
+      <div class="filters" aria-label="Бүтээгдэхүүний ангилал">
+        <button class="filter active" type="button" data-category="all">Бүгд</button>
+        <button class="filter" type="button" data-category="Анимэ">Анимэ</button>
+        <button class="filter" type="button" data-category="Манга">Манга</button>
+        <button class="filter" type="button" data-category="Cosplay">Cosplay</button>
+        <button class="filter" type="button" data-category="Апп">Апп</button>
+        <button class="filter" type="button" data-category="Хөгжим">Хөгжим</button>
+        <button class="filter" type="button" data-category="Кино">Кино</button>
+      </div>
+
+      <div class="products" id="productGrid"></div>
+    </section>
+
+    <section class="section faq" id="help">
+      <span class="eyebrow">ТУСЛАМЖ</span>
+      <h2>Түгээмэл асуултууд</h2>
+
+      <details>
+        <summary>Захиалга яаж хийх вэ?</summary>
+        <p>Бүтээгдэхүүнээ сагсанд нэмээд захиалга хийх товчийг дараарай. Одоогоор төлбөрийн демо хувилбар.</p>
+      </details>
+
+      <details>
+        <summary>Cosplay хувцсаа яаж сонгох вэ?</summary>
+        <p>Cosplay бүтээгдэхүүн дээр дарж анимэ, дүрээ хайж сонгоод сагсанд нэмнэ.</p>
+      </details>
+
+      <details>
+        <summary>Cover зураг яаж нэмэх вэ?</summary>
+        <p>Зургаа images хавтсанд кодонд заасан нэрээр хадгалахад карт дээр харагдана.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Crybanana · Дижитал сонголт нэг дор.</div>
+  </footer>
+
+  <dialog id="cosplayDialog" class="modal"></dialog>
+  <dialog id="cartDialog" class="modal cart-modal"></dialog>
+</body>
+</html>
